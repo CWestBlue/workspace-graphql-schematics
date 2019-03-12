@@ -1,0 +1,26 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "outDir": "../../dist/out-tsc/libs/colors-api-lib",
+        "types": [
+            "node"
+        ],
+        "experimentalDecorators": true,
+        "esModuleInterop": true,
+        "module": "commonjs",
+        "target": "es2016",
+        "lib": [
+            "es2016",
+            "esnext.asynciterable"
+        ],
+        "noImplicitAny": false,
+        "suppressImplicitAnyIndexErrors": true,
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "sourceMap": true,
+        "declaration": true,
+    },
+    "exclude": [
+        "**/*.spec.ts"
+    ]
+}

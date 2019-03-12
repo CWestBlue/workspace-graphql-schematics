@@ -2,7 +2,64 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "",
-  "projects": {},
+  "projects": {
+    "ColorsApi": {
+      "root": "apps/colors-api",
+      "sourceRoot": "apps/colors-api/src",
+      "projectType": "application",
+      "prefix": "ColorsApi",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/builders:node-build",
+          "options": {
+            "outputPath": "dist/apps/colors-api",
+            "main": "apps/colors-api/src/index.ts",
+            "tsConfig": "apps/colors-api/tsconfig.app.json"
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/colors-api/src/environments/environment.ts",
+                  "with": "apps/colors-api/src/environments/environment.prod.ts"
+                }
+              ],
+              "externalDependencies": "none"
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/builders:node-execute",
+          "options": {
+            "buildTarget": "ColorsApi:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/colors-api/tsconfig.app.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ColorsApiLib": {
+      "root": "libs/colors-api-lib",
+      "sourceRoot": "libs/colors-api-lib/src",
+      "projectType": "library",
+      "prefix": "playground-workspace",
+      "schematics": {},
+      "architect": {}
+    }
+  },
   "cli": {
     "warnings": {
       "typescriptMismatch": false,

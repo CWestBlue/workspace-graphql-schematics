@@ -1,0 +1,25 @@
+{
+    "$schema": "../../node_modules/@angular-devkit/schematics/collection-schema.json",
+    "name": "my-schematics-collection",
+    "version": "0.0.1",
+    "extends": [
+        "@nrwl/schematics"
+    ],
+    "schematics": {
+        "second": {
+            "factory": "../../dist/out-tsc/tools/schematics/second",
+            "schema": "./second/schema.json",
+            "description": "Do awesome stuff"
+        },
+        "api-lib": {
+            "factory": "../../dist/out-tsc/tools/schematics/api-lib",
+            "description": "API Generator",
+            "schema": "./api-lib/schema.json"
+        },
+        "api-app": {
+            "factory": "../../dist/out-tsc/tools/schematics/api-app",
+            "description": "API Generator",
+            "schema": "./api-app/schema.json"
+        }
+    }
+}
