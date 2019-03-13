@@ -10,7 +10,19 @@ type Query {
 
 type Item {
     name: String
+    stream: String
+    totalhealth: Float
+    totalgrowth: Float
+    current: Float
     type: String
+    months: [Month]
+}
+
+type Month {
+    monthname: String
+    present: Float
+    health: Float
+    growth: Float
 }
 `;
 
