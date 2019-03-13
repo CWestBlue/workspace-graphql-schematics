@@ -15,7 +15,7 @@ export function updateAngularJson(options) {
       root: rootPath,
       sourceRoot: join(rootPath, 'src'),
       projectType: 'library',
-      prefix: 'playground-workspace',
+      prefix: options.prefix ? options.prefix : 'libs',
       schematics: {},
       architect: <any>{}
     };
@@ -38,6 +38,17 @@ export function updateNx(options) {
   })
 }
 
+export function updateTsConfig(options) {
+  const prefix = options.prefix ? options.prefix : 'libs';
+  const rootPath: Path = join(normalize('libs'), dasherize(options.name));
+  return updateJsonInTree('tsconfig.json', json => {
+    json.compilerOptions.paths[`@${prefix}/${dasherize(options.name)}`] = [
+      join(rootPath, 'src')
+    ]
+    return json;
+  })
+}
+
 export default function (schema: any): Rule {
   return (tree: Tree, context: SchematicContext) => {
     if (!schema.name) {
@@ -57,7 +68,8 @@ export default function (schema: any): Rule {
     return chain([
       branchAndMerge(mergeWith(templateSource)),
       updateAngularJson(schema),
-      updateNx(schema)
+      updateNx(schema),
+      updateTsConfig(schema)
     ]);
   };
 }

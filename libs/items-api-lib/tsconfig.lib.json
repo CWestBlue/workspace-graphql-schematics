@@ -1,7 +1,7 @@
 {
     "extends": "./tsconfig.json",
     "compilerOptions": {
-        "outDir": "../../dist/out-tsc/libs/colors-api-lib",
+        "outDir": "../../dist/out-tsc/libs/items-api-lib",
         "types": [
             "node"
         ],

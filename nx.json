@@ -8,10 +8,10 @@
     "nx.json": "*"
   },
   "projects": {
-    "ColorsApi": {
+    "ItemsApi": {
       "tags": []
     },
-    "ColorsApiLib": {
+    "ItemsApiLib": {
       "tags": []
     }
   }

@@ -4,7 +4,7 @@ import { Injectable } from "@graphql-modules/di";
 export class ItemsService {
     public getItems = async () => {
         return new Promise((res, rej) => {
-            res(['blue', 'black', 'purple', 'yellow'])
+            res([{ name: 'blue', type: 'color' }, { name: 'black', type: 'color' }, { name: 'purple', type: 'color' }, { name: 'yellow', type: 'color' }])
         });
     }
 }

@@ -5,10 +5,16 @@ import { ItemsService } from './providers';
 
 const typeDefs = `
 type Query {
-    items: [String]
-}`;
+    items: [Item]
+}
 
-export const ColorsApiLibModule = new GraphQLModule({
+type Item {
+    name: String
+    type: String
+}
+`;
+
+export const ItemsApiLibModule = new GraphQLModule({
     providers: [ItemsService],
     resolvers,
     typeDefs

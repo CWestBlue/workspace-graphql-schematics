@@ -4,8 +4,8 @@ require('dotenv').config({
 });
 import 'reflect-metadata';
 // tslint:disable-next-line:no-unused-expression
-import { ColorsApiModule } from './app';
+import { ItemsApiModule } from './app';
 import { bootstrap } from './server';
 // tslint:disable-next-line:no-console
 console.log('Ready for launch. 3... 2... 1... 🚀 ');
-bootstrap(ColorsApiModule)
+bootstrap(ItemsApiModule)

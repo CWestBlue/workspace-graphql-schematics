@@ -3,19 +3,19 @@
   "version": 1,
   "newProjectRoot": "",
   "projects": {
-    "ColorsApi": {
-      "root": "apps/colors-api",
-      "sourceRoot": "apps/colors-api/src",
+    "ItemsApi": {
+      "root": "apps/items-api",
+      "sourceRoot": "apps/items-api/src",
       "projectType": "application",
-      "prefix": "ColorsApi",
+      "prefix": "ItemsApi",
       "schematics": {},
       "architect": {
         "build": {
           "builder": "@nrwl/builders:node-build",
           "options": {
-            "outputPath": "dist/apps/colors-api",
-            "main": "apps/colors-api/src/index.ts",
-            "tsConfig": "apps/colors-api/tsconfig.app.json"
+            "outputPath": "dist/apps/items-api",
+            "main": "apps/items-api/src/index.ts",
+            "tsConfig": "apps/items-api/tsconfig.app.json"
           },
           "configurations": {
             "production": {
@@ -24,8 +24,8 @@
               "inspect": false,
               "fileReplacements": [
                 {
-                  "replace": "apps/colors-api/src/environments/environment.ts",
-                  "with": "apps/colors-api/src/environments/environment.prod.ts"
+                  "replace": "apps/items-api/src/environments/environment.ts",
+                  "with": "apps/items-api/src/environments/environment.prod.ts"
                 }
               ],
               "externalDependencies": "none"
@@ -35,14 +35,14 @@
         "serve": {
           "builder": "@nrwl/builders:node-execute",
           "options": {
-            "buildTarget": "ColorsApi:build"
+            "buildTarget": "ItemsApi:build"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "apps/colors-api/tsconfig.app.json"
+              "apps/items-api/tsconfig.app.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -51,11 +51,11 @@
         }
       }
     },
-    "ColorsApiLib": {
-      "root": "libs/colors-api-lib",
-      "sourceRoot": "libs/colors-api-lib/src",
+    "ItemsApiLib": {
+      "root": "libs/items-api-lib",
+      "sourceRoot": "libs/items-api-lib/src",
       "projectType": "library",
-      "prefix": "playground-workspace",
+      "prefix": "libs",
       "schematics": {},
       "architect": {}
     }

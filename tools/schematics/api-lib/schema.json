@@ -10,6 +10,10 @@
         "$source": "argv",
         "index": 0
       }
+    },
+    "prefix": {
+      "type": "string",
+      "description": "Prefix name for library"
     }
   },
   "required": [

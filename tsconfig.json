@@ -18,8 +18,8 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@playground-workspace/colors": [
-        "libs/colors-api-lib/src/index.ts"
+      "@libs/items-api-lib": [
+        "libs/items-api-lib/src"
       ]
     }
   },

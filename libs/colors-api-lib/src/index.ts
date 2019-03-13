@@ -1,1 +1,0 @@
-export * from './lib/colors-api-lib.module';

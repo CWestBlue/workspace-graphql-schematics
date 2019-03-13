@@ -5,8 +5,14 @@ import { ItemsService } from './providers';
 
 const typeDefs = `
 type Query {
-    items: [String]
-}`;
+    items: [Item]
+}
+
+type Item {
+    name: String
+    type: String
+}
+`;
 
 export const <%= classify(name + 'Module') %> = new GraphQLModule({
     providers: [ItemsService],
